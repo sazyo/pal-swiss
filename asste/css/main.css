@@ -1,0 +1,431 @@
+:root {
+    --primary-color: #E31E24;
+}
+
+
+.container{
+    width: 85%;
+
+}
+.redNav{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    background-color: var(--primary-color);
+    height: 40px;
+}
+.redText{
+    color: var(--primary-color);
+}
+.navbarBordar {
+    border-radius:  20px 20px  0px 0px ;
+    background-color: #ffffff;
+    margin-top: 12px;
+    padding: 5px 0;
+    z-index: 1020;;
+    position: sticky;
+}
+
+.hero-section {
+    padding: 0px 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-img {
+    position: relative;
+    width: 65%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+.hero-img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid var(--primary-color);
+    border-radius: 25%;
+}
+
+.hero-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 25%;
+    display: block;
+}
+
+.about-section {
+    padding: 50px 0;
+}
+.aboutContent{
+
+    background-color: #f9f9f9;
+    padding: 40px 20px 20px 20px;
+    border-radius: 20px;
+    
+}
+.about-content {
+    padding: 40px;
+
+}
+
+.corner-top-left, .corner-bottom-right, .corner-top-right ,.corner-bottom-left{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+}
+
+.corner-top-left {
+    top: -2px;
+    left: -2px;
+    border-top: 7px solid #000000;
+    border-left: 7px solid #000000;
+    border-radius: 50% 0  0 0;
+}
+
+.corner-top-right  {
+    top: -2px;
+    right: -2px;
+    border-top: 7px solid var(--primary-color);
+    border-right: 7px solid var(--primary-color);
+    border-radius:  0 50% 0 0;
+}
+
+.corner-bottom-right {
+
+    bottom: -2px;
+    right: -2px;
+    border-bottom: 7px solid #000000;
+    border-right: 7px solid #000000;
+    border-radius:  0  0 50% 0 ;
+}
+.corner-bottom-left {
+
+    bottom: -2px;
+    left: -2px;
+    border-bottom: 7px solid var(--primary-color);
+    border-left:7px solid var(--primary-color);
+    border-radius:  0  0  0 50%;
+}
+
+.about-content p {
+    line-height: 1.8;
+    color: #333;
+}
+
+.offerings-section {
+    background-color: #f8f9fa;
+}
+
+.offering-card {
+    perspective: 1000px;
+    height: 200px;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.offering-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    background-color: var(--primary-color);
+    color: white;
+
+   
+}
+
+.offering-card:hover {
+    transform: translateY(-5px);
+}
+
+.offering-card h3 {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.recruitment-section {
+    background-color: #2d2d2d;
+    color: white;
+}
+
+.process-card {
+    text-align: center;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 15px;
+    color: #333;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+.process-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.process-card h3 {
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.swiper-pagination-bullet {
+    background: var(--primary-color) !important;
+}
+
+.swiper {
+    width: 100%;
+    padding: 30px 0;
+}
+
+.swiper-slide {
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    color: #333;
+    height: 220px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.swiper-slide img {
+    width: 60px;
+    margin-bottom: 15px;
+}
+
+.swiper-slide h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: var(--primary-color);
+}
+
+.talent-section {
+    background-color: #ffffff;
+    padding: 80px 0;
+}
+
+.talent-img {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.talent-img img {
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.talent-img:hover img {
+    transform: scale(1.02);
+}
+
+
+
+.vacancies-section .card {
+    transition: transform 0.3s ease;
+
+}
+
+.vacancies-section .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1)!important;
+}
+.submit-cv-section {
+    background-color: #2d2d2d;
+}
+
+.upload-area {
+    border: 2px dashed rgba(255,255,255,0.2);
+    transition: all 0.3s ease;
+}
+
+.upload-area:hover {
+    border-color: var(--primary-color);
+}
+
+.form-control {
+    border: none;
+    padding: 0.8rem;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(227, 30, 36, 0.25);
+}
+.footer {
+    border-top: 1px solid #eee;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+    border-radius: 50%;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.footer-logos img {
+    margin: 0 10px;
+}
+
+.contact-info i {
+    font-size: 1.2rem;
+}
+.btn-back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--primary-color);
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    border: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.btn-back-to-top:hover {
+    background: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.btn-back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* Contact Form Styles */
+.contact-form {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    
+    margin: 0 auto;
+}
+
+.contact-form h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.contact-form .form-control {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 12px;
+    margin-bottom: 20px;
+    width: 100%;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form .form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: none;
+    outline: none;
+}
+
+.contact-form textarea.form-control {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.contact-form .form-label {
+    color: #666;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.contact-form .required {
+    color: var(--primary-color);
+}
+
+.contact-form .submit-btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form .submit-btn:hover {
+    background-color: var(--primary-color);
+}
+
+/* Add these styles to your existing CSS */
+.red-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    background-color: var(--primary-color);
+    height: 40vh;
+}
+
+.contact img {
+    max-width: 100%;
+    height: 60PX;
+}
+
