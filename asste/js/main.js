@@ -1,23 +1,26 @@
-const swiper = new Swiper(".mySwiper", {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    loop: true,
-    autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-    },
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-    breakpoints: {
-        640: {
-            slidesPerView: 2,
+document.addEventListener('DOMContentLoaded', () => {
+    generateRecruitmentSteps();
+    const swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
         },
-        1024: {
-            slidesPerView: 3,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
         },
-    },
+        breakpoints: {
+            640: {
+                slidesPerView: 2,
+            },
+            1024: {
+                slidesPerView: 3,
+            },
+        },
+    });
 });
 
 
@@ -108,6 +111,51 @@ function generateOfferings() {
         `;
         
         container.appendChild(offeringElement);
+    });
+}
+
+const recruitmentSteps = [
+    {
+        icon: './asste/public/Icon-1.png',
+        title: 'Specify',
+        description: 'Detail your hiring needs and job criteria.'
+    },
+    {
+        icon: './asste/public/Icon-2.png',
+        title: 'Evaluate',
+        description: 'Perform detailed candidate evaluations.'
+    },
+    {
+        icon: './asste/public/Icon-3.png',
+        title: 'Select',
+        description: 'Choose the most qualified candidates.'
+    },
+    {
+        icon: './asste/public/Icon-4.png',
+        title: 'Verify',
+        description: 'Perform thorough background checks.'
+    },
+    {
+        icon: './asste/public/Icon-5.png',
+        title: 'Integrate',
+        description: 'Smoothly transition new hires.'
+    }
+];
+
+function generateRecruitmentSteps() {
+    const container = document.querySelector('#recruitmentSteps');
+    
+    recruitmentSteps.forEach(step => {
+        const stepElement = document.createElement('div');
+        stepElement.className = 'swiper-slide';
+        
+        stepElement.innerHTML = `
+            <img src="${step.icon}" alt="${step.title}">
+            <h3>${step.title}</h3>
+            <p>${step.description}</p>
+        `;
+        
+        container.appendChild(stepElement);
     });
 }
 
