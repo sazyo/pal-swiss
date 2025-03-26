@@ -30,7 +30,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Smooth scroll to top when clicking the button
 backToTopButton.addEventListener('click', () => {
     window.scrollTo({
         top: 0,
@@ -59,3 +58,57 @@ document.querySelectorAll('.dropdown-item').forEach(item => {
         }
     });
 });
+
+const offerings = [
+    {
+        title: "Access to Skilled Talent",
+        description: "Engage with a rigorously screened pool of Palestinian ICT specialists, tailored to meet the high standards and specific needs of Swiss businesses."
+    },
+    {
+        title: "Secure Employment Management",
+        description: "We ensure a stable, secure, and conducive work environment that mirrors the expectations of Swiss corporate culture in localized offices."
+    },
+    {
+        title: "Regulatory Compliance",
+        description: "Financial and legal governance through Swiss organizations and fiduciaries, accommodating both Swiss and Palestinian laws."
+    },
+    {
+        title: "Customized Training Programs",
+        description: "Training to bridge any skill gaps, including multilingual proficiency in German, French, and more, to cater to the Swiss market."
+    },
+    {
+        title: "Cost Efficiency",
+        description: "Achieve significant cost savings with salary expenses that are competitively lower compared to Swiss and European standards."
+    },
+    {
+        title: "Expansion Opportunities",
+        description: "Explore the potential to establish and expand your company's presence in Palestine, fostering long-term growth and innovation."
+    }
+];
+
+function generateOfferings() {
+    const container = document.querySelector('#offeringsContainer');
+    
+    offerings.forEach(offering => {
+        const offeringElement = document.createElement('div');
+        offeringElement.className = 'col-md-6 col-lg-4 wow animate__animated animate__fadeInUp';
+        offeringElement.setAttribute('data-wow-delay', '0.2s');
+        
+        offeringElement.innerHTML = `
+            <div class="offering-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h3>${offering.title}</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>${offering.description}</p>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        container.appendChild(offeringElement);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', generateOfferings);
